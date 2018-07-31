@@ -328,6 +328,7 @@ class JSON_API_Core_Controller {
     $object_key = strtolower(substr(get_class($object), 9));
     return array(
       'count' => count($posts),
+      'count_total' => (int) $wp_query->found_posts,
       'pages' => (int) $wp_query->max_num_pages,
       $object_key => $object,
       'posts' => $posts
